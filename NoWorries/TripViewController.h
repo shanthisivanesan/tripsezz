@@ -15,6 +15,5 @@
 @property(nonatomic,strong) IBOutlet UITextField *daysStayTextField;
 @property(nonatomic,strong) IBOutlet UISegmentedControl *carSegementField;
 @property(nonatomic,strong) IBOutlet UILabel *cardiagnoseAlertLabel;
-@property(nonatomic,strong) IBOutlet UIButton *btnConfirm;
-@property(nonatomic,strong) IBOutlet UIButton *btnDetails;
+@property(nonatomic,strong) IBOutlet UIButton *btnSearch;
 @end

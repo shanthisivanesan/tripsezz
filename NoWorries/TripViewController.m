@@ -9,6 +9,8 @@
 #import "TripViewController.h"
 #import "CarViewController.h"
 #import "SettingsViewController.h"
+#import "DetailsViewController.h"
+
 @interface TripViewController ()
 - (void)updatevalues;
 @end
@@ -28,6 +30,8 @@
     [super viewDidLoad];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Car Diagnose" style:UIBarButtonItemStylePlain target:self action:@selector(onCarDiagnoseButton)];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Settings" style:UIBarButtonItemStylePlain target:self action:@selector(onSettingsButton)];
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onbtnSearch)];
+    [self.btnSearch addGestureRecognizer:tapGesture];
 }
 
 - (void)didReceiveMemoryWarning
@@ -38,6 +42,14 @@
 
 
 #pragma  mark - private methods
+
+-(void)onbtnSearch
+{
+    NSLog(@"Search button clicked");
+    DetailsViewController *detailsVC = [[DetailsViewController alloc] init];
+    [[self navigationController] pushViewController:detailsVC
+                                           animated:YES];
+}
 
 - (void)onCarDiagnoseButton
 {
