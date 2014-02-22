@@ -19,6 +19,10 @@
 		CE606DD418B9026200408547 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE606DBC18B9026200408547 /* UIKit.framework */; };
 		CE606DDC18B9026200408547 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE606DDA18B9026200408547 /* InfoPlist.strings */; };
 		CE606DDE18B9026200408547 /* NoWorriesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE606DDD18B9026200408547 /* NoWorriesTests.m */; };
+		CE606DEF18B9158D00408547 /* TripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE606DED18B9158D00408547 /* TripViewController.m */; };
+		CE606DF018B9158D00408547 /* TripViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE606DEE18B9158D00408547 /* TripViewController.xib */; };
+		CE606DF418B91D3F00408547 /* CarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE606DF218B91D3F00408547 /* CarViewController.m */; };
+		CE606DF518B91D3F00408547 /* CarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE606DF318B91D3F00408547 /* CarViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,12 @@
 		CE606DD918B9026200408547 /* NoWorriesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NoWorriesTests-Info.plist"; sourceTree = "<group>"; };
 		CE606DDB18B9026200408547 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CE606DDD18B9026200408547 /* NoWorriesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoWorriesTests.m; sourceTree = "<group>"; };
+		CE606DEC18B9158D00408547 /* TripViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripViewController.h; sourceTree = "<group>"; };
+		CE606DED18B9158D00408547 /* TripViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripViewController.m; sourceTree = "<group>"; };
+		CE606DEE18B9158D00408547 /* TripViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TripViewController.xib; sourceTree = "<group>"; };
+		CE606DF118B91D3F00408547 /* CarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarViewController.h; sourceTree = "<group>"; };
+		CE606DF218B91D3F00408547 /* CarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarViewController.m; sourceTree = "<group>"; };
+		CE606DF318B91D3F00408547 /* CarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CarViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +121,12 @@
 				CE606DC818B9026200408547 /* AppDelegate.m */,
 				CE606DCA18B9026200408547 /* Images.xcassets */,
 				CE606DBF18B9026200408547 /* Supporting Files */,
+				CE606DEC18B9158D00408547 /* TripViewController.h */,
+				CE606DED18B9158D00408547 /* TripViewController.m */,
+				CE606DEE18B9158D00408547 /* TripViewController.xib */,
+				CE606DF118B91D3F00408547 /* CarViewController.h */,
+				CE606DF218B91D3F00408547 /* CarViewController.m */,
+				CE606DF318B91D3F00408547 /* CarViewController.xib */,
 			);
 			path = NoWorries;
 			sourceTree = "<group>";
@@ -220,7 +236,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE606DC318B9026200408547 /* InfoPlist.strings in Resources */,
+				CE606DF018B9158D00408547 /* TripViewController.xib in Resources */,
 				CE606DCB18B9026200408547 /* Images.xcassets in Resources */,
+				CE606DF518B91D3F00408547 /* CarViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,7 +258,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE606DC918B9026200408547 /* AppDelegate.m in Sources */,
+				CE606DEF18B9158D00408547 /* TripViewController.m in Sources */,
 				CE606DC518B9026200408547 /* main.m in Sources */,
+				CE606DF418B91D3F00408547 /* CarViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
