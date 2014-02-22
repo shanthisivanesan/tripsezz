@@ -1,0 +1,31 @@
+expedia to book hotel and flights
+
+carvyant - take your car and find the failures in the car
+
+macy’s get deals based 
+
+expedia
+hotel list
+http://api.ean.com/ean-services/rs/hotel/v3/list?cid=55505&apiKey=6sq6gc3awd4ubtkfwgvw5dxu&minorRev=4&customerUserAgent=MOBILE_APP&customerIpAddress=50.205.69.10&locale=en_US%20&currencyCode=USD&city=Seattle&stateProvinceCode=WA&countryCode=US&supplierCacheTolerance=MED_ENHANCED%20book%20reservation&_type=json
+
+booking:REST Reservation Request for 1 Room with 2 Adults and 2 Children (ages 5 and 7)
+
+
+http://api.ean.com/ean-services/rs/hotel/v3/list?minorRev=4&cid=55505&apiKey=6sq6gc3awd4ubtkfwgvw5dxu&customerUserAgent=MOBILE_APP&customerIpAddress=50.205.69.10&locale=en_US&currencyCode=USD&city=Seattle&stateProvinceCode=WA&countryCode=US&supplierCacheTolerance=MED&arrivalDate=09/04/2014&departureDate=09/05/2014&room1=2&numberOfResults=1&supplierCacheTolerance=MED_ENHANCED&_type=json
+
+flight book
+
+http://api.ean.com/expe/deals/flights.xml?tripFrom=SEA&arrivalDate=2014-05-15&departDate=2014-03-15&apiKey=6sq6gc3awd4ubtkfwgvw5dxu
+
+car book
+http://www.expedia.com/pub/agent.dll?qscr=card&piid=a23842df-c8d9-479c-9a3d-9ffb4ac3d5b2
+
+
+-------------
+
+carvoyant
+https://dash.carvoyant.com/api/vehicle?user=20c7d47a-4dce-4031-aed1-013d17718e7b:9e6356dc-c73f-427b-b5f9-5d2881260ff6
+
+http://confluence.carvoyant.com/display/PUBDEV/Home
+
+C201200140
