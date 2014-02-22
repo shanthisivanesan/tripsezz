@@ -1,24 +1,25 @@
 //
-//  CarViewController.m
+//  SettingsViewController.m
 //  NoWorries
 //
 //  Created by user on 2/22/14.
 //  Copyright (c) 2014 user. All rights reserved.
 //
 
-#import "CarViewController.h"
+#import "SettingsViewController.h"
 
-@interface CarViewController ()
+@interface SettingsViewController ()
 
 @end
 
-@implementation CarViewController
+@implementation SettingsViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title=@"Car Diagnose";    }
+        self.title = @"Settings";
+    }
     return self;
 }
 

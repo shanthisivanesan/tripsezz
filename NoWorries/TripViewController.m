@@ -7,7 +7,8 @@
 //
 
 #import "TripViewController.h"
-
+#import "CarViewController.h"
+#import "SettingsViewController.h"
 @interface TripViewController ()
 - (void)updatevalues;
 @end
@@ -25,8 +26,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.carSegementField.selectedSegmentIndex=0;
-    [self.carSegementField addTarget:self action:@selector(updatevalues) forControlEvents:UIControlEventValueChanged];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Car Diagnose" style:UIBarButtonItemStylePlain target:self action:@selector(onCarDiagnoseButton)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Settings" style:UIBarButtonItemStylePlain target:self action:@selector(onSettingsButton)];
 }
 
 - (void)didReceiveMemoryWarning
@@ -34,7 +35,27 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 #pragma  mark - private methods
+
+- (void)onCarDiagnoseButton
+{
+    NSLog(@"Details Button Tapped");
+    CarViewController *carVC = [[CarViewController alloc] init];
+    //[carVC carReportLabel:self.cardiagnoseAlertLabel.text];
+    [[self navigationController] pushViewController:carVC
+                                           animated:YES];
+}
+
+- (void)onSettingsButton
+{
+    NSLog(@"Settings Button Tapped");
+    SettingsViewController *settingsVC = [[SettingsViewController alloc] init];
+    [[self navigationController] pushViewController:settingsVC
+                                           animated:YES];
+}
+
 -(void) updatevalues {
     
     NSString *srcZip = self.srcZipTextField.text;
@@ -52,5 +73,6 @@
     
     self.cardiagnoseAlertLabel.text = @"Car has Issues. Do you want to rent a car through Expedia?";
 }
+
 
 @end

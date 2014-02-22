@@ -23,6 +23,8 @@
 		CE606DF018B9158D00408547 /* TripViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE606DEE18B9158D00408547 /* TripViewController.xib */; };
 		CE606DF418B91D3F00408547 /* CarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE606DF218B91D3F00408547 /* CarViewController.m */; };
 		CE606DF518B91D3F00408547 /* CarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE606DF318B91D3F00408547 /* CarViewController.xib */; };
+		CE606DF918B93D3300408547 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE606DF718B93D3300408547 /* SettingsViewController.m */; };
+		CE606DFA18B93D3300408547 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE606DF818B93D3300408547 /* SettingsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,9 @@
 		CE606DF118B91D3F00408547 /* CarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarViewController.h; sourceTree = "<group>"; };
 		CE606DF218B91D3F00408547 /* CarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarViewController.m; sourceTree = "<group>"; };
 		CE606DF318B91D3F00408547 /* CarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CarViewController.xib; sourceTree = "<group>"; };
+		CE606DF618B93D3300408547 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		CE606DF718B93D3300408547 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		CE606DF818B93D3300408547 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +132,9 @@
 				CE606DF118B91D3F00408547 /* CarViewController.h */,
 				CE606DF218B91D3F00408547 /* CarViewController.m */,
 				CE606DF318B91D3F00408547 /* CarViewController.xib */,
+				CE606DF618B93D3300408547 /* SettingsViewController.h */,
+				CE606DF718B93D3300408547 /* SettingsViewController.m */,
+				CE606DF818B93D3300408547 /* SettingsViewController.xib */,
 			);
 			path = NoWorries;
 			sourceTree = "<group>";
@@ -239,6 +247,7 @@
 				CE606DF018B9158D00408547 /* TripViewController.xib in Resources */,
 				CE606DCB18B9026200408547 /* Images.xcassets in Resources */,
 				CE606DF518B91D3F00408547 /* CarViewController.xib in Resources */,
+				CE606DFA18B93D3300408547 /* SettingsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +268,7 @@
 			files = (
 				CE606DC918B9026200408547 /* AppDelegate.m in Sources */,
 				CE606DEF18B9158D00408547 /* TripViewController.m in Sources */,
+				CE606DF918B93D3300408547 /* SettingsViewController.m in Sources */,
 				CE606DC518B9026200408547 /* main.m in Sources */,
 				CE606DF418B91D3F00408547 /* CarViewController.m in Sources */,
 			);
