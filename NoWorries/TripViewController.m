@@ -22,7 +22,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = @"TripEzz";    }
+        self.title = @"TripsEzz";    }
     return self;
 }
 
