@@ -8,6 +8,7 @@
 
 #import "DetailsViewController.h"
 #import "DetailsCell.h"
+#import "ExpediaClient.h"
 
 @interface DetailsViewController ()
 
@@ -39,6 +40,19 @@
     // register this newly created nib with the table view.
     // Use same identifier as mentioned in interface builder
     [self.tableView registerNib:detailsCellNib forCellReuseIdentifier:@"DetailsCell"];
+    
+    [[ExpediaClient sharedExpediaClient] listHotelsForCity:@"San Francisco"
+                                                  forState:@"CA"
+                                                forCountry:@"US"
+                                               withSuccess:^(AFHTTPRequestOperation *operation, id response)
+     {
+         NSLog(@"Success!!!");
+     }
+                                                   failure:^(AFHTTPRequestOperation *operation, NSError *error)
+     {
+         NSLog(@"Failure!!!");
+     }
+     ];
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,16 +72,23 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 3;
+    return 10;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"DetailsCell";
     DetailsCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    cell.hotelNameLabel.text = @"Parc 55 Wyndham";
+    cell.address1Label.text = @"P55 Cyril Magnin St";
+    cell.ratingLabel.text = @"4";
     return cell;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 75;
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath

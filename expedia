@@ -6,9 +6,15 @@ macy’s get deals based
 
 expedia
 hotel list
-http://api.ean.com/ean-services/rs/hotel/v3/list?cid=55505&apiKey=6sq6gc3awd4ubtkfwgvw5dxu&minorRev=4&customerUserAgent=MOBILE_APP&customerIpAddress=50.205.69.10&locale=en_US%20&currencyCode=USD&city=Seattle&stateProvinceCode=WA&countryCode=US&supplierCacheTolerance=MED_ENHANCED%20book%20reservation&_type=json
+http://api.ean.com/ean-services/rs/hotel/v3/list?cid=55505&apiKey=6sq6gc3awd4ubtkfwgvw5dxu&minorRev=4&customerUserAgent=MOBILE_APP&customerIpAddress=50.205.69.10&locale=en_US%20&currencyCode=USD&city=San Francisco&stateProvinceCode=CA&countryCode=US&supplierCacheTolerance=MED_ENHANCED%20book%20reservation&_type=json
 
+
+http://api.ean.com/ean-services/rs/hotel/v3/list?cid=55505&apiKey=6sq6gc3awd4ubtkfwgvw5dxu&minorRev=4&customerUserAgent=MOBILE_APP&customerIpAddress=50.205.69.10&locale=en_US%20&currencyCode=USD&latitude=30.7&longitude=25.2&supplierCacheTolerance=MED_ENHANCED%20book%20reservation&_type=json
 booking:REST Reservation Request for 1 Room with 2 Adults and 2 Children (ages 5 and 7)
+
+--latitude& longitude
+
+http://api.ean.com/ean-services/rs/hotel/v3/list?cid=55505&apiKey=6sq6gc3awd4ubtkfwgvw5dxu&minorRev=4&customerUserAgent=MOBILE_APP&customerIpAddress=50.205.69.10&locale=en_US%20&currencyCode=USD&latitude=37.7833&longitude=122.4167&supplierCacheTolerance=MED_ENHANCED%20book%20reservation&_type=json
 
 
 http://api.ean.com/ean-services/rs/hotel/v3/list?minorRev=4&cid=55505&apiKey=6sq6gc3awd4ubtkfwgvw5dxu&customerUserAgent=MOBILE_APP&customerIpAddress=50.205.69.10&locale=en_US&currencyCode=USD&city=Seattle&stateProvinceCode=WA&countryCode=US&supplierCacheTolerance=MED&arrivalDate=09/04/2014&departureDate=09/05/2014&room1=2&numberOfResults=1&supplierCacheTolerance=MED_ENHANCED&_type=json

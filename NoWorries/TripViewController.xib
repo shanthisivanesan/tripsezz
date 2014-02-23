@@ -60,7 +60,7 @@
                     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ZipCode" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hdJ-U2-feO">
-                    <rect key="frame" x="168" y="80" width="97" height="30"/>
+                    <rect key="frame" x="167" y="80" width="97" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>

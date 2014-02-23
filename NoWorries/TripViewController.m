@@ -33,15 +33,16 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Settings" style:UIBarButtonItemStylePlain target:self action:@selector(onSettingsButton)];
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onbtnSearch)];
     UITapGestureRecognizer *tapGesture1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onbtnCurrLoc)];
-    
+    self.srcZipTextField.text = @"94102";
+    self.destZipTextField.text = @"94133";
     [self.btnSearch addGestureRecognizer:tapGesture];
     [self.btnCurrLoc addGestureRecognizer:tapGesture1];
 
     
     //geoSearch
-    
-    [[ExpediaClient sharedExpediaClient] getHotelsForLatitude:@"30.7"
-                                                forLongitude:@"10.3"
+ /*
+    [[ExpediaClient sharedExpediaClient] getHotelsForLatitude:@"37.7833"
+                                                forLongitude:@"122.4167"
                                                   withSuccess:^(AFHTTPRequestOperation *operation, id response)
      {
          NSLog(@"Success!!!");
@@ -51,7 +52,6 @@
          NSLog(@"Failure!!!");
      }
      ];
-
 
 
     //hotel list
@@ -66,7 +66,7 @@
      {
          NSLog(@"Failure!!!");
      }
-    ];
+    ];*/
 }
 
 - (void)didReceiveMemoryWarning
