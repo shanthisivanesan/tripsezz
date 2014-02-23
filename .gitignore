@@ -19,3 +19,4 @@ DerivedData
 .idea/
 *.xccheckout
 Pods/
+Podfile.lock
