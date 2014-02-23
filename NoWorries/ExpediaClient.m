@@ -60,7 +60,7 @@
     [self getPath:@"geoSearch"
        parameters:params
           success:^(AFHTTPRequestOperation *operation, id response) {
-              NSLog(@"%@",response);
+              //NSLog(@"%@",response);
           }
           failure:failure
      ];
@@ -90,10 +90,10 @@
     [self getPath:@"list"
        parameters:params
           success:^(AFHTTPRequestOperation *operation, id response) {
-              NSLog(@"%@",response);
+              //NSLog(@"%@",response);
               //              NSDictionary *responseDictionary = [response objectForKey:@"response"];
               //              NSArray *hotelsArray = [responseDictionary objectForKey:@"venues"];
-              //              success(operation, hotelsArray);
+              success(operation, response);
           }
           failure:failure
      ];

@@ -12,6 +12,10 @@
 
 @interface DetailsViewController ()
 
+@property (nonatomic, strong) NSDictionary *hotelsResponse;
+@property (nonatomic, strong) NSMutableArray *hotelsResponseArray;
+@property (nonatomic, strong) NSMutableArray *hotelNames;
+
 @end
 
 @implementation DetailsViewController
@@ -47,6 +51,14 @@
                                                withSuccess:^(AFHTTPRequestOperation *operation, id response)
      {
          NSLog(@"Success!!!");
+         self.hotelsResponse = [response objectForKey:@"HotelListResponse"];
+         //NSLog(@"Hotel Response %@", self.hotelsResponse);
+         //NSLog(@"%@", [[self.hotelsResponse valueForKey:@"HotelList"] valueForKey:@"HotelSummary"]);
+         self.hotelsResponseArray = [[self.hotelsResponse valueForKey:@"HotelList"] valueForKey:@"HotelSummary"];
+         for (NSDictionary *item in self.hotelsResponseArray)
+         {
+             NSLog(@"%@", [item valueForKey:@"address1"]);
+         }
      }
                                                    failure:^(AFHTTPRequestOperation *operation, NSError *error)
      {
