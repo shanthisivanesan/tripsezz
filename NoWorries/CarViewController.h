@@ -18,4 +18,5 @@
 @property(nonatomic,strong) IBOutlet UILabel *carReportLabel;
 @property(nonatomic,strong) IBOutlet UISlider *carStatusslider;
 @property(nonatomic,strong) IBOutlet UIButton *btncarReport;
+@property(nonatomic,strong) IBOutlet UIButton *btncallDealer;
 @end

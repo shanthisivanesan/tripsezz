@@ -38,6 +38,34 @@
     return self;
 }
 
+- (void) getHotelsForLatitude:(NSString *) latitude
+                       forLongitude:(NSString *) longitude
+                  withSuccess:(void (^)(AFHTTPRequestOperation *operation, id response))success
+                      failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
+{
+    NSMutableDictionary *params =
+    [NSMutableDictionary dictionaryWithDictionary:@{
+                                                    @"cid":[APIKeys expediaAPICID],
+                                                    @"apiKey":[APIKeys expediaAPIKey],
+                                                    @"minorRev":@"4",
+                                                    @"customerUserAgent":@"MOBILE_APP",
+                                                    @"customerIpAddress":@"127.0.0.1",
+                                                    @"locale":@"en_US",
+                                                    @"currencyCode":@"USD",
+                                                    @"latitude":latitude,
+                                                    @"longitude":longitude,
+                                                    @"_type":@"json"
+                                                    }
+     ];
+    [self getPath:@"geoSearch"
+       parameters:params
+          success:^(AFHTTPRequestOperation *operation, id response) {
+              NSLog(@"%@",response);
+          }
+          failure:failure
+     ];
+}
+
 - (void) listHotelsForCity:(NSString *) city
                   forState:(NSString *) state
                 forCountry:(NSString *) country

@@ -11,9 +11,16 @@
 @interface ExpediaClient : AFHTTPClient
 
 + (ExpediaClient *)sharedExpediaClient;
+
 - (void) listHotelsForCity:(NSString *) city
                   forState:(NSString *) state
                 forCountry:(NSString *) country
                withSuccess:(void (^)(AFHTTPRequestOperation *operation, id response))success
                    failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
+
+- (void) getHotelsForLatitude:(NSString *) latitude
+                forLongitude:(NSString *) longitude
+               withSuccess:(void (^)(AFHTTPRequestOperation *operation, id response))success
+                   failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
+
 @end

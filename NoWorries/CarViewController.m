@@ -18,7 +18,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title=@"Car Diagnose";    }
+        self.title=@"Car Report";    }
     return self;
 }
 
@@ -32,6 +32,18 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)btncallDealer:(id)sender {
+    [self callDealer];
+}
+- (void) callDealer
+{
+    NSLog(@"Call Dealer Tapped");
+    NSString *phoneNumber = @"1-408-203-5769"; // dynamically assigned
+    NSString *phoneURLString = [NSString stringWithFormat:@"tel:%@", phoneNumber];
+    NSURL *phoneURL = [NSURL URLWithString:phoneURLString];
+    [[UIApplication sharedApplication] openURL:phoneURL];
 }
 
 @end

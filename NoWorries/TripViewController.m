@@ -29,10 +29,28 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Car Diagnose" style:UIBarButtonItemStylePlain target:self action:@selector(onCarDiagnoseButton)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Check Car" style:UIBarButtonItemStylePlain target:self action:@selector(onCarDiagnoseButton)];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Settings" style:UIBarButtonItemStylePlain target:self action:@selector(onSettingsButton)];
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onbtnSearch)];
     [self.btnSearch addGestureRecognizer:tapGesture];
+    
+    //geoSearch
+    
+    [[ExpediaClient sharedExpediaClient] getHotelsForLatitude:@"30.7"
+                                                forLongitude:@"10.3"
+                                                  withSuccess:^(AFHTTPRequestOperation *operation, id response)
+     {
+         NSLog(@"Success!!!");
+     }
+                                                      failure:^(AFHTTPRequestOperation *operation, NSError *error)
+     {
+         NSLog(@"Failure!!!");
+     }
+     ];
+
+
+
+    //hotel list
     [[ExpediaClient sharedExpediaClient] listHotelsForCity:@"San Francisco"
                                                   forState:@"CA"
                                                 forCountry:@"US"
@@ -44,7 +62,7 @@
      {
          NSLog(@"Failure!!!");
      }
-     ];
+    ];
 }
 
 - (void)didReceiveMemoryWarning
@@ -66,7 +84,7 @@
 
 - (void)onCarDiagnoseButton
 {
-    NSLog(@"Details Button Tapped");
+    NSLog(@"Car Report  Tapped");
     CarViewController *carVC = [[CarViewController alloc] init];
     //[carVC carReportLabel:self.cardiagnoseAlertLabel.text];
     [[self navigationController] pushViewController:carVC
@@ -82,7 +100,6 @@
 }
 
 -(void) updatevalues {
-    
     NSString *srcZip = self.srcZipTextField.text;
     NSString *destZip = self.destZipTextField.text;
     int carOption = self.carSegementField.selectedSegmentIndex;
@@ -94,6 +111,7 @@
     {
         //rental, then look for option 
     }
+    
     int daysStay = [self.daysStayTextField.text intValue];
     
     self.cardiagnoseAlertLabel.text = @"Car has Issues. Do you want to rent a car through Expedia?";
