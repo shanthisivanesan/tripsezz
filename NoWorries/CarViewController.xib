@@ -6,7 +6,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CarViewController">
             <connections>
-                <outlet property="btncarReport" destination="Skm-ZM-6x6" id="zlO-Rn-CSH"/>
+                <outlet property="btncallDealer" destination="zCX-hQ-fMU" id="yit-PU-jOu"/>
+                <outlet property="btncarReport" destination="Skm-ZM-6x6" id="yhl-4I-dNx"/>
                 <outlet property="carReportLabel" destination="POe-cJ-bvc" id="QZL-a6-rX8"/>
                 <outlet property="carStatusslider" destination="lsM-Gf-fPH" id="Uvb-fc-6FO"/>
                 <outlet property="engineLabel" destination="GD4-6b-jfU" id="vRA-Mb-Ocw"/>

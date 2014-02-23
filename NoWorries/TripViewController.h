@@ -16,4 +16,5 @@
 @property(nonatomic,strong) IBOutlet UISegmentedControl *carSegementField;
 @property(nonatomic,strong) IBOutlet UILabel *cardiagnoseAlertLabel;
 @property(nonatomic,strong) IBOutlet UIButton *btnSearch;
+
 @end

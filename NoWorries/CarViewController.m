@@ -9,7 +9,7 @@
 #import "CarViewController.h"
 
 @interface CarViewController ()
-
+- (IBAction)btncallDealer:(id)sender;
 @end
 
 @implementation CarViewController
@@ -25,7 +25,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(callDealer)];
+    [self.btncallDealer addGestureRecognizer:tapGesture];
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,6 +45,9 @@
     NSString *phoneURLString = [NSString stringWithFormat:@"tel:%@", phoneNumber];
     NSURL *phoneURL = [NSURL URLWithString:phoneURLString];
     [[UIApplication sharedApplication] openURL:phoneURL];
+    
+    //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"tel:1-408-203-5769"]];
+    
 }
 
 @end
