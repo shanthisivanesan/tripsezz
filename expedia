@@ -13,6 +13,34 @@ booking:REST Reservation Request for 1 Room with 2 Adults and 2 Children (ages 5
 
 http://api.ean.com/ean-services/rs/hotel/v3/list?minorRev=4&cid=55505&apiKey=6sq6gc3awd4ubtkfwgvw5dxu&customerUserAgent=MOBILE_APP&customerIpAddress=50.205.69.10&locale=en_US&currencyCode=USD&city=Seattle&stateProvinceCode=WA&countryCode=US&supplierCacheTolerance=MED&arrivalDate=09/04/2014&departureDate=09/05/2014&room1=2&numberOfResults=1&supplierCacheTolerance=MED_ENHANCED&_type=json
 
+HotelList - dictionary and loop through
+	"@activePropertyCount" = 271;
+		HotelSummary - array
+
+					address1 = "55 Cyril Magnin St";
+                    airportCode = SFO;
+                    city = "San Francisco";
+                    confidenceRating = 48;
+                    deepLink = "http://travel.ian.com/index.jsp?pageName=hotAvail&amp;cid=55505&amp;hotelID=123447&amp;mode=2&amp;numberOfRooms=1&amp;room-0-adult-total=2&amp;showInfo=true&amp;locale=en_US&amp;currencyCode=USD";
+                    highRate = 229;
+                    hotelRating = 4;
+                    latitude = "37.78458";
+                    locationDescription = "Near Union Square";
+                    longitude = "-122.40854";
+                    lowRate = 179;
+                    name = "Parc 55 Wyndham San Francisco - Union Square";
+                    postalCode = 94102;
+
+                    proximityDistance = "5.4716816";
+                    
+                    rateCurrencyCode = USD;
+                    shortDescription = "&lt;p&gt;&lt;b&gt;Property Location&lt;/b&gt; &lt;br /&gt;With a stay at Parc 55 Wyndham San Francisco - Union Square, you&apos;ll be centrally located in San Francisco, steps from San Francisco Visitor&apos;s Center and Powell and";
+                    stateProvinceCode = CA;
+                    thumbNailUrl = "/hotels/1000000/20000/12600/12539/12539_113_t.jpg";
+                    tripAdvisorRating = 4;
+                },
+
+
 flight book
 
 http://api.ean.com/expe/deals/flights.xml?tripFrom=SEA&arrivalDate=2014-05-15&departDate=2014-03-15&apiKey=6sq6gc3awd4ubtkfwgvw5dxu

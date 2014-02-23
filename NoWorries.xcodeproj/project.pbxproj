@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		CE2D673718B96B6E00A71C43 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2D673518B96B6E00A71C43 /* DetailsViewController.m */; };
-		CE2D673818B96B6E00A71C43 /* DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE2D673618B96B6E00A71C43 /* DetailsViewController.xib */; };
 		CE606DB918B9026200408547 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE606DB818B9026200408547 /* Foundation.framework */; };
 		CE606DBB18B9026200408547 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE606DBA18B9026200408547 /* CoreGraphics.framework */; };
 		CE606DBD18B9026200408547 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE606DBC18B9026200408547 /* UIKit.framework */; };
@@ -49,7 +48,6 @@
 		ADAED1DEFA1840A286DBB4E1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		CE2D673418B96B6E00A71C43 /* DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		CE2D673518B96B6E00A71C43 /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
-		CE2D673618B96B6E00A71C43 /* DetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailsViewController.xib; sourceTree = "<group>"; };
 		CE606DB518B9026200408547 /* NoWorries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoWorries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE606DB818B9026200408547 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CE606DBA18B9026200408547 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -163,7 +161,6 @@
 				CE606DF818B93D3300408547 /* SettingsViewController.xib */,
 				CE2D673418B96B6E00A71C43 /* DetailsViewController.h */,
 				CE2D673518B96B6E00A71C43 /* DetailsViewController.m */,
-				CE2D673618B96B6E00A71C43 /* DetailsViewController.xib */,
 				F8AC032618B9776C00E933A6 /* DetailsCell.xib */,
 				F8AC032818B977EA00E933A6 /* DetailsCell.h */,
 				F8AC032918B977EA00E933A6 /* DetailsCell.m */,
@@ -283,7 +280,6 @@
 				CE606DF518B91D3F00408547 /* CarViewController.xib in Resources */,
 				CE606DFA18B93D3300408547 /* SettingsViewController.xib in Resources */,
 				F8AC032718B9776C00E933A6 /* DetailsCell.xib in Resources */,
-				CE2D673818B96B6E00A71C43 /* DetailsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

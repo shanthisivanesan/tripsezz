@@ -22,7 +22,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = @"TripEz";    }
+        self.title = @"TripEzz";    }
     return self;
 }
 
@@ -32,7 +32,11 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Check Car" style:UIBarButtonItemStylePlain target:self action:@selector(onCarDiagnoseButton)];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Settings" style:UIBarButtonItemStylePlain target:self action:@selector(onSettingsButton)];
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onbtnSearch)];
+    UITapGestureRecognizer *tapGesture1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onbtnCurrLoc)];
+    
     [self.btnSearch addGestureRecognizer:tapGesture];
+    [self.btnCurrLoc addGestureRecognizer:tapGesture1];
+
     
     //geoSearch
     
@@ -82,6 +86,13 @@
                                            animated:YES];
 }
 
+-(void)onbtnCurrLoc
+{
+    NSLog(@"Current Location button clicked");
+    DetailsViewController *detailsVC = [[DetailsViewController alloc] init];
+    [[self navigationController] pushViewController:detailsVC
+                                           animated:YES];
+}
 - (void)onCarDiagnoseButton
 {
     NSLog(@"Car Report  Tapped");

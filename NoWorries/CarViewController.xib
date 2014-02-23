@@ -50,7 +50,7 @@
                     <rect key="frame" x="28" y="439" width="87" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <size key="titleShadowOffset" width="1" height="1"/>
-                    <state key="normal" title="Tweet">
+                    <state key="normal" title="Send Report">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
