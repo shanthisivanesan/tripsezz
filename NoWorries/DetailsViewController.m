@@ -7,6 +7,7 @@
 //
 
 #import "DetailsViewController.h"
+#import "DetailsCell.h"
 
 @interface DetailsViewController ()
 
@@ -32,6 +33,12 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    // create nib with cell nib. Use same name as xib
+    UINib *detailsCellNib = [UINib nibWithNibName:@"DetailsCell" bundle:nil];
+    // register this newly created nib with the table view.
+    // Use same identifier as mentioned in interface builder
+    [self.tableView registerNib:detailsCellNib forCellReuseIdentifier:@"DetailsCell"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,28 +51,20 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return 3;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    }
-    
-    // Configure the cell...
-    
+    static NSString *CellIdentifier = @"DetailsCell";
+    DetailsCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     return cell;
 }
 
