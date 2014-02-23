@@ -27,6 +27,8 @@
 		CE606DF518B91D3F00408547 /* CarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE606DF318B91D3F00408547 /* CarViewController.xib */; };
 		CE606DF918B93D3300408547 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE606DF718B93D3300408547 /* SettingsViewController.m */; };
 		CE606DFA18B93D3300408547 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE606DF818B93D3300408547 /* SettingsViewController.xib */; };
+		F8AC032218B9768800E933A6 /* ExpediaClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F8AC032018B9768800E933A6 /* ExpediaClient.m */; };
+		F8AC032518B976A200E933A6 /* APIKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = F8AC032318B976A200E933A6 /* APIKeys.m */; };
 		FBA0A645005D4D9B84C7A1FF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C700C1B82634EAB9487DE7C /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +73,10 @@
 		CE606DF618B93D3300408547 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		CE606DF718B93D3300408547 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		CE606DF818B93D3300408547 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		F8AC032018B9768800E933A6 /* ExpediaClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpediaClient.m; sourceTree = "<group>"; };
+		F8AC032118B9768800E933A6 /* ExpediaClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpediaClient.h; sourceTree = "<group>"; };
+		F8AC032318B976A200E933A6 /* APIKeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIKeys.m; sourceTree = "<group>"; };
+		F8AC032418B976A200E933A6 /* APIKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIKeys.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +139,10 @@
 		CE606DBE18B9026200408547 /* NoWorries */ = {
 			isa = PBXGroup;
 			children = (
+				F8AC032318B976A200E933A6 /* APIKeys.m */,
+				F8AC032418B976A200E933A6 /* APIKeys.h */,
+				F8AC032018B9768800E933A6 /* ExpediaClient.m */,
+				F8AC032118B9768800E933A6 /* ExpediaClient.h */,
 				CE606DC718B9026200408547 /* AppDelegate.h */,
 				CE606DC818B9026200408547 /* AppDelegate.m */,
 				CE606DCA18B9026200408547 /* Images.xcassets */,
@@ -316,7 +326,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8AC032218B9768800E933A6 /* ExpediaClient.m in Sources */,
 				CE606DC918B9026200408547 /* AppDelegate.m in Sources */,
+				F8AC032518B976A200E933A6 /* APIKeys.m in Sources */,
 				CE606DEF18B9158D00408547 /* TripViewController.m in Sources */,
 				CE606DF918B93D3300408547 /* SettingsViewController.m in Sources */,
 				CE2D673718B96B6E00A71C43 /* DetailsViewController.m in Sources */,

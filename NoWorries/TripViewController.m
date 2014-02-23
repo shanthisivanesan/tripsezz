@@ -10,6 +10,7 @@
 #import "CarViewController.h"
 #import "SettingsViewController.h"
 #import "DetailsViewController.h"
+#import "ExpediaClient.h"
 
 @interface TripViewController ()
 - (void)updatevalues;
@@ -32,6 +33,18 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Settings" style:UIBarButtonItemStylePlain target:self action:@selector(onSettingsButton)];
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onbtnSearch)];
     [self.btnSearch addGestureRecognizer:tapGesture];
+    [[ExpediaClient sharedExpediaClient] listHotelsForCity:@"San Francisco"
+                                                  forState:@"CA"
+                                                forCountry:@"US"
+                                               withSuccess:^(AFHTTPRequestOperation *operation, id response)
+     {
+         NSLog(@"Success!!!");
+     }
+                                                   failure:^(AFHTTPRequestOperation *operation, NSError *error)
+     {
+         NSLog(@"Failure!!!");
+     }
+     ];
 }
 
 - (void)didReceiveMemoryWarning
