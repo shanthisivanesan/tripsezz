@@ -10,7 +10,10 @@
 #import "CarViewController.h"
 #import "SettingsViewController.h"
 #import "DetailsViewController.h"
+#import "SearchViewController.h"
 #import "ExpediaClient.h"
+#import "TripsEzModel.h"
+
 
 @interface TripViewController ()
 - (void)updatevalues;
@@ -38,35 +41,7 @@
     [self.btnSearch addGestureRecognizer:tapGesture];
     [self.btnCurrLoc addGestureRecognizer:tapGesture1];
 
-    
-    //geoSearch
- /*
-    [[ExpediaClient sharedExpediaClient] getHotelsForLatitude:@"37.7833"
-                                                forLongitude:@"122.4167"
-                                                  withSuccess:^(AFHTTPRequestOperation *operation, id response)
-     {
-         NSLog(@"Success!!!");
-     }
-                                                      failure:^(AFHTTPRequestOperation *operation, NSError *error)
-     {
-         NSLog(@"Failure!!!");
-     }
-     ];
 
-
-    //hotel list
-    [[ExpediaClient sharedExpediaClient] listHotelsForCity:@"San Francisco"
-                                                  forState:@"CA"
-                                                forCountry:@"US"
-                                               withSuccess:^(AFHTTPRequestOperation *operation, id response)
-     {
-         NSLog(@"Success!!!");
-     }
-                                                   failure:^(AFHTTPRequestOperation *operation, NSError *error)
-     {
-         NSLog(@"Failure!!!");
-     }
-    ];*/
 }
 
 - (void)didReceiveMemoryWarning
@@ -81,8 +56,10 @@
 -(void)onbtnSearch
 {
     NSLog(@"Search button clicked");
-    DetailsViewController *detailsVC = [[DetailsViewController alloc] init];
-    [[self navigationController] pushViewController:detailsVC
+   // [[TripsEzModel instance] setSrcZip:self.srcZipTextField.text];
+   // [[TripsEzModel instance] setDestZip:self.srcZipTextField.text];
+    DetailsViewController *searchVC = [[DetailsViewController alloc] init];
+    [[self navigationController] pushViewController:searchVC
                                            animated:YES];
 }
 

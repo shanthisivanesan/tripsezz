@@ -37,9 +37,9 @@
     }
     return self;
 }
-
-- (void) getHotelsForLatitude:(NSString *) latitude
-                       forLongitude:(NSString *) longitude
+/*
+- (void) getHotelsByLatitude:(NSString *) latitude
+                       byLongitude:(NSString *) longitude
                   withSuccess:(void (^)(AFHTTPRequestOperation *operation, id response))success
                       failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
 {
@@ -57,15 +57,17 @@
                                                     @"_type":@"json"
                                                     }
      ];
-    [self getPath:@"geoSearch"
+    [self getPath:@"list"
        parameters:params
           success:^(AFHTTPRequestOperation *operation, id response) {
-              //NSLog(@"%@",response);
+              NSLog(@"%s","getHotelsForLatitude");
+              NSLog(@"%@",params);
+              NSLog(@"%@",response);
           }
           failure:failure
      ];
 }
-
+*/
 - (void) listHotelsForCity:(NSString *) city
                   forState:(NSString *) state
                 forCountry:(NSString *) country

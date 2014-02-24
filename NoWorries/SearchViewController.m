@@ -1,35 +1,32 @@
 //
-//  DetailsViewController.m
+//  SearchViewController.m
 //  NoWorries
 //
-//  Created by user on 2/22/14.
+//  Created by user on 2/23/14.
 //  Copyright (c) 2014 user. All rights reserved.
 //
 
-#import "DetailsViewController.h"
+#import "SearchViewController.h"
 #import "DetailsCell.h"
 #import "ExpediaClient.h"
-//#import "TripsEzModel.h"
 
-@interface DetailsViewController ()
-
+@interface SearchViewController ()
 @property (nonatomic, strong) NSDictionary *hotelsResponse;
 @property (nonatomic, strong) NSMutableArray *hotelsResponseArray;
 @property (nonatomic, strong) NSMutableArray *hotelNames;
-
 @end
 
-@implementation DetailsViewController
+@implementation SearchViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
-        self.title=@"Search Results from Expedia";
     }
     return self;
 }
+
 
 - (void)viewDidLoad
 {
@@ -60,17 +57,17 @@
          int i=0;
          for (NSDictionary *item in self.hotelsResponseArray)
          {
-             /* NSLog(@"Count:%d", i);
-              NSLog(@"%@", [item valueForKey:@"name"]);
-              NSLog(@"%@", [item valueForKey:@"address1"]);
-              NSLog(@"%@", [item valueForKey:@"address2"]);
-              NSLog(@"%@", [item valueForKey:@"city"]);
-              NSLog(@"%@", [item valueForKey:@"postalCode"]);
-              NSLog(@"%@", [item valueForKey:@"highRate"]);
-              NSLog(@"%@", [item valueForKey:@"proximityDistance"]);
-              NSLog(@"%@", [item valueForKey:@"thumbNailUrl"]);
-              NSLog(@"%@", [item valueForKey:@"hotelRating"]);
-              i++;*/
+             NSLog(@"Count:%d", i);
+             NSLog(@"%@", [item valueForKey:@"name"]);
+             NSLog(@"%@", [item valueForKey:@"address1"]);
+             NSLog(@"%@", [item valueForKey:@"city"]);
+             NSLog(@"%@", [item valueForKey:@"stateProvinceCode"]);
+             NSLog(@"%@", [item valueForKey:@"postalCode"]);
+             NSLog(@"%@", [item valueForKey:@"highRate"]);
+             NSLog(@"%@", [item valueForKey:@"proximityDistance"]);
+             NSLog(@"%@", [item valueForKey:@"thumbNailUrl"]);
+             NSLog(@"%@", [item valueForKey:@"tripAdvisorRating"]);
+             i++;
          }
      }
                                                    failure:^(AFHTTPRequestOperation *operation, NSError *error)
@@ -108,46 +105,36 @@
     {
         cell.hotelNameLabel.text = @"Parc 55 Wyndham";
         cell.address1Label.text = @"P55 Cyril Magnin St";
-        cell.price.text = @"229.00";
-        //cell.hotelImage.image = "";
-        cell.ratingLabel.text = @"4.0";
-        cell.zipLabel.text = @"94102";
+        cell.ratingLabel.text = @"$229.00";
+        cell.zipLabel.text = @"Rating:4";
     }
     else if(indexPath.row==1)
     {
         cell.hotelNameLabel.text = @"Castle Inn";
         cell.address1Label.text = @"1565 Broadway";
-        cell.ratingLabel.text = @"4.0";
-        //cell.hotelImage.image = "";
-        cell.price.text = @"$168.99";
-        cell.zipLabel.text = @"94109";
+        cell.ratingLabel.text = @"$168.99";
+        cell.zipLabel.text = @"Rating:4";
     }
     else if(indexPath.row==2)
     {
         cell.hotelNameLabel.text = @"Executive Hotel Vintage Court";
         cell.address1Label.text = @"650 Bush Street";
-        cell.price.text = @"$229.00";
-        cell.ratingLabel.text = @"3.5";
-        //cell.hotelImage.image = "";
-        cell.zipLabel.text = @"94108";
+        cell.ratingLabel.text = @"$229.00";
+        cell.zipLabel.text = @"Rating:3.5";
     }
     else if(indexPath.row==3)
     {
         cell.hotelNameLabel.text = @"San Remo Hotel";
         cell.address1Label.text = @"2237 Mason Street";
-        cell.price.text = @"$129.00";
-        cell.ratingLabel.text = @"4.0";
-        //cell.hotelImage.image = "";
-        cell.zipLabel.text = @"94133";
+        cell.ratingLabel.text = @"$129.00";
+        cell.zipLabel.text = @"Rating:4";
     }
     else if(indexPath.row==4)
     {
         cell.hotelNameLabel.text = @"Hilton San Francisco Downtown";
         cell.address1Label.text = @"750 Kearny St";
-        cell.price.text = @"$389.00";
-        cell.ratingLabel.text = @"4.0";
-        //cell.hotelImage.image = "";
-        cell.zipLabel.text = @"94108";
+        cell.ratingLabel.text = @"$389.00";
+        cell.zipLabel.text = @"Rating:4";
     }
     return cell;
 }
@@ -156,6 +143,4 @@
 {
     return 75;
 }
-
-
 @end
