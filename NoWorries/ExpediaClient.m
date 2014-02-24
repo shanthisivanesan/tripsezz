@@ -38,6 +38,7 @@
     return self;
 }
 /*
+
 - (void) getHotelsByLatitude:(NSString *) latitude
                        byLongitude:(NSString *) longitude
                   withSuccess:(void (^)(AFHTTPRequestOperation *operation, id response))success

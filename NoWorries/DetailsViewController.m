@@ -54,26 +54,12 @@
      {
          NSLog(@"Success!!!");
          self.hotelsResponse = [response objectForKey:@"HotelListResponse"];
-         // NSLog(@"Hotel Response %@", self.hotelsResponse);
-         // NSLog(@"%@", [[self.hotelsResponse valueForKey:@"HotelList"] valueForKey:@"HotelSummary"]);
+          //NSLog(@"Hotel Response %@", self.hotelsResponse);
+          //NSLog(@"%@", [[self.hotelsResponse valueForKey:@"HotelList"] valueForKey:@"HotelSummary"]);
          self.hotelsResponseArray = [[self.hotelsResponse valueForKey:@"HotelList"] valueForKey:@"HotelSummary"];
-         int i=0;
-         for (NSDictionary *item in self.hotelsResponseArray)
-         {
-             /* NSLog(@"Count:%d", i);
-              NSLog(@"%@", [item valueForKey:@"name"]);
-              NSLog(@"%@", [item valueForKey:@"address1"]);
-              NSLog(@"%@", [item valueForKey:@"address2"]);
-              NSLog(@"%@", [item valueForKey:@"city"]);
-              NSLog(@"%@", [item valueForKey:@"postalCode"]);
-              NSLog(@"%@", [item valueForKey:@"highRate"]);
-              NSLog(@"%@", [item valueForKey:@"proximityDistance"]);
-              NSLog(@"%@", [item valueForKey:@"thumbNailUrl"]);
-              NSLog(@"%@", [item valueForKey:@"hotelRating"]);
-              i++;*/
-         }
-     }
-                                                   failure:^(AFHTTPRequestOperation *operation, NSError *error)
+         //NSLog(@"%@", self.hotelsResponseArray);
+              }
+     failure:^(AFHTTPRequestOperation *operation, NSError *error)
      {
          NSLog(@"Failure!!!");
      }
@@ -100,15 +86,33 @@
     return 10;
 }
 
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+     NSLog(@"Count:%@", self.hotelsResponseArray);
     static NSString *CellIdentifier = @"DetailsCell";
     DetailsCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    int i=0;
+    for (NSDictionary *item in self.hotelsResponseArray)
+    {
+        NSLog(@"Count:%d", i);
+        NSLog(@"%@", [item valueForKey:@"name"]);
+        NSLog(@"%@", [item valueForKey:@"address1"]);
+        //NSLog(@"%@", [item valueForKey:@"address2"]);
+        NSLog(@"%@", [item valueForKey:@"city"]);
+        NSLog(@"%@", [item valueForKey:@"postalCode"]);
+        NSLog(@"%@", [item valueForKey:@"highRate"]);
+        NSLog(@"%@", [item valueForKey:@"proximityDistance"]);
+        NSLog(@"%@", [item valueForKey:@"thumbNailUrl"]);
+        NSLog(@"%@", [item valueForKey:@"hotelRating"]);
+        i=i+1;
+    }
+
     if(indexPath.row==0)
     {
         cell.hotelNameLabel.text = @"Parc 55 Wyndham";
         cell.address1Label.text = @"P55 Cyril Magnin St";
-        cell.price.text = @"229.00";
+        cell.price.text = @"$229.00";
         //cell.hotelImage.image = "";
         cell.ratingLabel.text = @"4.0";
         cell.zipLabel.text = @"94102";
@@ -154,7 +158,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 75;
+    return 80;
 }
 
 

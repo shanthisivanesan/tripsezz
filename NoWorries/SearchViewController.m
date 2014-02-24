@@ -101,7 +101,7 @@
 {
     static NSString *CellIdentifier = @"DetailsCell";
     DetailsCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    if(indexPath.row==0)
+  if(indexPath.row==0)
     {
         cell.hotelNameLabel.text = @"Parc 55 Wyndham";
         cell.address1Label.text = @"P55 Cyril Magnin St";
