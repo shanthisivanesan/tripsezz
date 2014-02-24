@@ -18,9 +18,9 @@
                withSuccess:(void (^)(AFHTTPRequestOperation *operation, id response))success
                    failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
 
-/*- (void) getHotelsByLatitude:(NSString *) latitude
+- (void) getHotelsByLatitude:(NSString *) latitude
                 byLongitude:(NSString *) longitude
                withSuccess:(void (^)(AFHTTPRequestOperation *operation, id response))success
-                   failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;*/
+                   failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
 
 @end

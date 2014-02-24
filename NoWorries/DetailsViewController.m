@@ -47,10 +47,8 @@
     // Use same identifier as mentioned in interface builder
     [self.tableView registerNib:detailsCellNib forCellReuseIdentifier:@"DetailsCell"];
     
-    [[ExpediaClient sharedExpediaClient] listHotelsForCity:@"San Francisco"
-                                                  forState:@"CA"
-                                                forCountry:@"US"
-                                               withSuccess:^(AFHTTPRequestOperation *operation, id response)
+    [[ExpediaClient sharedExpediaClient] getHotelsByLatitude:@"37.7"
+                                                  byLongitude:@"122.2" withSuccess:^(AFHTTPRequestOperation *operation, id response)
      {
          NSLog(@"Success!!!");
          self.hotelsResponse = [response objectForKey:@"HotelListResponse"];

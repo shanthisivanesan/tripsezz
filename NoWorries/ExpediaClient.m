@@ -37,7 +37,7 @@
     }
     return self;
 }
-/*
+
 
 - (void) getHotelsByLatitude:(NSString *) latitude
                        byLongitude:(NSString *) longitude
@@ -68,7 +68,7 @@
           failure:failure
      ];
 }
-*/
+
 - (void) listHotelsForCity:(NSString *) city
                   forState:(NSString *) state
                 forCountry:(NSString *) country
