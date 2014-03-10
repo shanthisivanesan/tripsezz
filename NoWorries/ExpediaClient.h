@@ -23,4 +23,7 @@
                withSuccess:(void (^)(AFHTTPRequestOperation *operation, id response))success
                    failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
 
+@property (nonatomic, strong) NSDictionary *hotelsResponse;
+@property (nonatomic, strong) NSMutableArray *hotelsResponseArray;
+@property (nonatomic, strong) NSMutableArray *hotelNames;
 @end

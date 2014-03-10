@@ -9,11 +9,12 @@
 #import "SearchViewController.h"
 #import "DetailsCell.h"
 #import "ExpediaClient.h"
+#import "Business.h"
 
 @interface SearchViewController ()
 @property (nonatomic, strong) NSDictionary *hotelsResponse;
-@property (nonatomic, strong) NSMutableArray *hotelsResponseArray;
-@property (nonatomic, strong) NSMutableArray *hotelNames;
+@property (nonatomic, strong) NSArray *hotelsResponseArray;
+@property (nonatomic, strong) NSArray *hotelNames;
 @end
 
 @implementation SearchViewController
@@ -31,13 +32,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
+    [self refreshData];
+}
+
+- (void)refreshData
+{
     // create nib with cell nib. Use same name as xib
     UINib *detailsCellNib = [UINib nibWithNibName:@"DetailsCell" bundle:nil];
     // register this newly created nib with the table view.
@@ -53,24 +52,13 @@
          self.hotelsResponse = [response objectForKey:@"HotelListResponse"];
          // NSLog(@"Hotel Response %@", self.hotelsResponse);
          // NSLog(@"%@", [[self.hotelsResponse valueForKey:@"HotelList"] valueForKey:@"HotelSummary"]);
-         self.hotelsResponseArray = [[self.hotelsResponse valueForKey:@"HotelList"] valueForKey:@"HotelSummary"];
-         int i=0;
-         for (NSDictionary *item in self.hotelsResponseArray)
-         {
-             NSLog(@"Count:%d", i);
-             NSLog(@"%@", [item valueForKey:@"name"]);
-             NSLog(@"%@", [item valueForKey:@"address1"]);
-             NSLog(@"%@", [item valueForKey:@"city"]);
-             NSLog(@"%@", [item valueForKey:@"stateProvinceCode"]);
-             NSLog(@"%@", [item valueForKey:@"postalCode"]);
-             NSLog(@"%@", [item valueForKey:@"highRate"]);
-             NSLog(@"%@", [item valueForKey:@"proximityDistance"]);
-             NSLog(@"%@", [item valueForKey:@"thumbNailUrl"]);
-             NSLog(@"%@", [item valueForKey:@"tripAdvisorRating"]);
-             i++;
-         }
-     }
-                                                   failure:^(AFHTTPRequestOperation *operation, NSError *error)
+         id businesses = [[self.hotelsResponse objectForKey:@"HotelList"]
+                            objectForKey:@"HotelSummary"];
+         if([businesses isKindOfClass:[NSArray class]]) {
+             self.hotelsResponseArray = [Business businessesWithArray:businesses];
+             [self.tableView reloadData];
+        }
+     } failure:^(AFHTTPRequestOperation *operation, NSError *error)
      {
          NSLog(@"Failure!!!");
      }
@@ -94,14 +82,24 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 10;
+    return [self.hotelsResponseArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"DetailsCell";
     DetailsCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-  if(indexPath.row==0)
+    Business *b = [self.hotelsResponseArray objectAtIndex:indexPath.row];
+    
+    cell.hotelNameLabel.text =b.name;
+    cell.address1Label.text = b.address;
+    cell.ratingLabel.text = b.tripAdvisorRating;
+    cell.zipLabel.text = b.zipcode;
+    return cell;
+    
+}
+
+  /*if(indexPath.row==0)
     {
         cell.hotelNameLabel.text = @"Parc 55 Wyndham";
         cell.address1Label.text = @"P55 Cyril Magnin St";
@@ -135,9 +133,8 @@
         cell.address1Label.text = @"750 Kearny St";
         cell.ratingLabel.text = @"$389.00";
         cell.zipLabel.text = @"Rating:4";
-    }
-    return cell;
-}
+    }*/
+
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {

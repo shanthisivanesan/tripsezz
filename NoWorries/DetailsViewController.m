@@ -9,13 +9,13 @@
 #import "DetailsViewController.h"
 #import "DetailsCell.h"
 #import "ExpediaClient.h"
-//#import "TripsEzModel.h"
+#import "Business.h"
 
 @interface DetailsViewController ()
 
 @property (nonatomic, strong) NSDictionary *hotelsResponse;
-@property (nonatomic, strong) NSMutableArray *hotelsResponseArray;
-@property (nonatomic, strong) NSMutableArray *hotelNames;
+@property (nonatomic, strong) NSArray *hotelsResponseArray;
+@property (nonatomic, strong) NSArray *hotelNames;
 
 @end
 
@@ -34,36 +34,34 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
+    [self refreshData];
+}
+
+- (void)refreshData
+{
     // create nib with cell nib. Use same name as xib
     UINib *detailsCellNib = [UINib nibWithNibName:@"DetailsCell" bundle:nil];
     // register this newly created nib with the table view.
     // Use same identifier as mentioned in interface builder
     [self.tableView registerNib:detailsCellNib forCellReuseIdentifier:@"DetailsCell"];
-    
+    //NSLog(@"viewDidLoad!!!");
     [[ExpediaClient sharedExpediaClient] getHotelsByLatitude:@"37.7"
-                                                  byLongitude:@"122.2" withSuccess:^(AFHTTPRequestOperation *operation, id response)
+                                                 byLongitude:@"122.2" withSuccess:^(AFHTTPRequestOperation *operation, id response)
      {
          NSLog(@"Success!!!");
          self.hotelsResponse = [response objectForKey:@"HotelListResponse"];
-          //NSLog(@"Hotel Response %@", self.hotelsResponse);
-          //NSLog(@"%@", [[self.hotelsResponse valueForKey:@"HotelList"] valueForKey:@"HotelSummary"]);
-         self.hotelsResponseArray = [[self.hotelsResponse valueForKey:@"HotelList"] valueForKey:@"HotelSummary"];
-         //NSLog(@"%@", self.hotelsResponseArray);
-              }
-     failure:^(AFHTTPRequestOperation *operation, NSError *error)
+         id businesses = [[self.hotelsResponse objectForKey:@"HotelList"]
+                          objectForKey:@"HotelSummary"];
+         if([businesses isKindOfClass:[NSArray class]]) {
+             self.hotelsResponseArray = [Business businessesWithArray:businesses];
+             [self.tableView reloadData];
+         }
+     } failure:^(AFHTTPRequestOperation *operation, NSError *error)
      {
          NSLog(@"Failure!!!");
      }
      ];
 }
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -81,16 +79,36 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 10;
+    return [self.hotelsResponseArray count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-     NSLog(@"Count:%@", self.hotelsResponseArray);
+     NSLog(@"Count:%@", self.hotelsResponse);
     static NSString *CellIdentifier = @"DetailsCell";
     DetailsCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    int i=0;
+
+    Business *b = [self.hotelsResponseArray objectAtIndex:indexPath.row];
+    
+    cell.hotelNameLabel.text =b.name;
+    cell.address1Label.text = b.address;
+    
+    //cell.ratingLabel.text = b.tripAdvisorRating;
+    cell.price.text =[NSString stringWithFormat:@"%@",b.hrate];
+    
+    cell.ratingLabel.text = [NSString stringWithFormat:@"%@",b.tripAdvisorRating];
+    
+    //cell.zipLabel.text = b.zipcode;
+    //rating
+    NSLog(@"%@",b.thumbNailUrl);
+    NSURL *url = [NSURL URLWithString:b.thumbNailUrl];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    cell.hotelImage.image = [UIImage imageWithData:data];
+    return cell;
+ 
+}
+    /*int i=0;
     for (NSDictionary *item in self.hotelsResponseArray)
     {
         NSLog(@"Count:%d", i);
@@ -103,9 +121,10 @@
         NSLog(@"%@", [item valueForKey:@"proximityDistance"]);
         NSLog(@"%@", [item valueForKey:@"thumbNailUrl"]);
         NSLog(@"%@", [item valueForKey:@"hotelRating"]);
+        cell.hotelNameLabel.text =[item valueForKey:@"name"];
         i=i+1;
-    }
-
+    }*/
+/*
     if(indexPath.row==0)
     {
         cell.hotelNameLabel.text = @"Parc 55 Wyndham";
@@ -150,9 +169,8 @@
         cell.ratingLabel.text = @"4.0";
         //cell.hotelImage.image = "";
         cell.zipLabel.text = @"94108";
-    }
-    return cell;
-}
+    }*/
+
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {

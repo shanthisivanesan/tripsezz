@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE24955418CD6BAF00249DCB /* Business.m in Sources */ = {isa = PBXBuildFile; fileRef = CE24955318CD6BAF00249DCB /* Business.m */; };
 		CE2D673718B96B6E00A71C43 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2D673518B96B6E00A71C43 /* DetailsViewController.m */; };
 		CE606DB918B9026200408547 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE606DB818B9026200408547 /* Foundation.framework */; };
 		CE606DBB18B9026200408547 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE606DBA18B9026200408547 /* CoreGraphics.framework */; };
@@ -48,6 +49,8 @@
 /* Begin PBXFileReference section */
 		6C700C1B82634EAB9487DE7C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADAED1DEFA1840A286DBB4E1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		CE24955218CD6BAF00249DCB /* Business.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Business.h; sourceTree = "<group>"; };
+		CE24955318CD6BAF00249DCB /* Business.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Business.m; sourceTree = "<group>"; };
 		CE2D673418B96B6E00A71C43 /* DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		CE2D673518B96B6E00A71C43 /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 		CE606DB518B9026200408547 /* NoWorries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoWorries.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,6 +116,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE24955018CD675400249DCB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F8AC032818B977EA00E933A6 /* DetailsCell.h */,
+				F8AC032918B977EA00E933A6 /* DetailsCell.m */,
+				CE606DF118B91D3F00408547 /* CarViewController.h */,
+				CEC5E8DF18BAC929008C5A11 /* SearchViewController.h */,
+				CEC5E8E018BAC929008C5A11 /* SearchViewController.m */,
+				CE606DEC18B9158D00408547 /* TripViewController.h */,
+				CE606DED18B9158D00408547 /* TripViewController.m */,
+				CE606DF218B91D3F00408547 /* CarViewController.m */,
+				CE606DF618B93D3300408547 /* SettingsViewController.h */,
+				CE606DF718B93D3300408547 /* SettingsViewController.m */,
+				CE2D673418B96B6E00A71C43 /* DetailsViewController.h */,
+				CE2D673518B96B6E00A71C43 /* DetailsViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		CE24955118CD676C00249DCB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE24955218CD6BAF00249DCB /* Business.h */,
+				CE24955318CD6BAF00249DCB /* Business.m */,
+				F8AC032318B976A200E933A6 /* APIKeys.m */,
+				F8AC032418B976A200E933A6 /* APIKeys.h */,
+				F8AC032018B9768800E933A6 /* ExpediaClient.m */,
+				F8AC032118B9768800E933A6 /* ExpediaClient.h */,
+				CEC5E8E218BAD5C4008C5A11 /* TripsEzModel.h */,
+				CEC5E8E318BAD5C4008C5A11 /* TripsEzModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		CE606DAC18B9026200408547 = {
 			isa = PBXGroup;
 			children = (
@@ -148,32 +185,16 @@
 		CE606DBE18B9026200408547 /* NoWorries */ = {
 			isa = PBXGroup;
 			children = (
-				F8AC032318B976A200E933A6 /* APIKeys.m */,
-				F8AC032418B976A200E933A6 /* APIKeys.h */,
-				F8AC032018B9768800E933A6 /* ExpediaClient.m */,
-				F8AC032118B9768800E933A6 /* ExpediaClient.h */,
+				CE24955118CD676C00249DCB /* Model */,
+				CE24955018CD675400249DCB /* Controller */,
 				CE606DC718B9026200408547 /* AppDelegate.h */,
 				CE606DC818B9026200408547 /* AppDelegate.m */,
-				CEC5E8E218BAD5C4008C5A11 /* TripsEzModel.h */,
-				CEC5E8E318BAD5C4008C5A11 /* TripsEzModel.m */,
+				CE606DEE18B9158D00408547 /* TripViewController.xib */,
+				CE606DF318B91D3F00408547 /* CarViewController.xib */,
+				CE606DF818B93D3300408547 /* SettingsViewController.xib */,
+				F8AC032618B9776C00E933A6 /* DetailsCell.xib */,
 				CE606DCA18B9026200408547 /* Images.xcassets */,
 				CE606DBF18B9026200408547 /* Supporting Files */,
-				CE606DEC18B9158D00408547 /* TripViewController.h */,
-				CE606DED18B9158D00408547 /* TripViewController.m */,
-				CE606DEE18B9158D00408547 /* TripViewController.xib */,
-				CE606DF118B91D3F00408547 /* CarViewController.h */,
-				CE606DF218B91D3F00408547 /* CarViewController.m */,
-				CE606DF318B91D3F00408547 /* CarViewController.xib */,
-				CE606DF618B93D3300408547 /* SettingsViewController.h */,
-				CE606DF718B93D3300408547 /* SettingsViewController.m */,
-				CE606DF818B93D3300408547 /* SettingsViewController.xib */,
-				CE2D673418B96B6E00A71C43 /* DetailsViewController.h */,
-				CE2D673518B96B6E00A71C43 /* DetailsViewController.m */,
-				F8AC032618B9776C00E933A6 /* DetailsCell.xib */,
-				F8AC032818B977EA00E933A6 /* DetailsCell.h */,
-				F8AC032918B977EA00E933A6 /* DetailsCell.m */,
-				CEC5E8DF18BAC929008C5A11 /* SearchViewController.h */,
-				CEC5E8E018BAC929008C5A11 /* SearchViewController.m */,
 			);
 			path = NoWorries;
 			sourceTree = "<group>";
@@ -350,6 +371,7 @@
 				CE2D673718B96B6E00A71C43 /* DetailsViewController.m in Sources */,
 				CEC5E8E418BAD5C4008C5A11 /* TripsEzModel.m in Sources */,
 				CE606DC518B9026200408547 /* main.m in Sources */,
+				CE24955418CD6BAF00249DCB /* Business.m in Sources */,
 				CE606DF418B91D3F00408547 /* CarViewController.m in Sources */,
 				F8AC032A18B977EA00E933A6 /* DetailsCell.m in Sources */,
 			);

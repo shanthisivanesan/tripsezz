@@ -14,6 +14,7 @@
 
 #define EXPEDIA_HOTELS_BASE_URL [NSURL URLWithString:@"http://api.ean.com/ean-services/rs/hotel/v3/"]
 
+
 @implementation ExpediaClient
 
 + (ExpediaClient *)sharedExpediaClient
@@ -61,9 +62,15 @@
     [self getPath:@"list"
        parameters:params
           success:^(AFHTTPRequestOperation *operation, id response) {
-              NSLog(@"%s","getHotelsForLatitude");
+             // NSLog(@"%s","getHotelsForLatitude");
               NSLog(@"%@",params);
-              NSLog(@"%@",response);
+              //NSLog(@"%@",response);
+              self.hotelsResponse = [response objectForKey:@"HotelListResponse"];
+              //NSLog(@"Hotel Response %@", self.hotelsResponse);
+              //NSLog(@"%@", [[self.hotelsResponse valueForKey:@"HotelList"] valueForKey:@"HotelSummary"]);
+              self.hotelsResponseArray = [[self.hotelsResponse valueForKey:@"HotelList"] valueForKey:@"HotelSummary"];
+              //NSLog(@"%@", self.hotelsResponseArray);
+              success(operation, response);
           }
           failure:failure
      ];
@@ -94,6 +101,11 @@
        parameters:params
           success:^(AFHTTPRequestOperation *operation, id response) {
               //NSLog(@"%@",response);
+              self.hotelsResponse = [response objectForKey:@"HotelListResponse"];
+              //NSLog(@"Hotel Response %@", self.hotelsResponse);
+              //NSLog(@"%@", [[self.hotelsResponse valueForKey:@"HotelList"] valueForKey:@"HotelSummary"]);
+              self.hotelsResponseArray = [[self.hotelsResponse valueForKey:@"HotelList"] valueForKey:@"HotelSummary"];
+              //NSLog(@"%@", self.hotelsResponseArray);
               //              NSDictionary *responseDictionary = [response objectForKey:@"response"];
               //              NSArray *hotelsArray = [responseDictionary objectForKey:@"venues"];
               success(operation, response);
