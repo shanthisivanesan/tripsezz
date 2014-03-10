@@ -26,4 +26,10 @@
     // Configure the view for the selected state
 }
 
+
+
+- (IBAction)onButton:(id)sender {
+    NSLog(@"Settings Button Tapped");
+
+   }
 @end

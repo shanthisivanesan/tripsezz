@@ -16,6 +16,9 @@
 @property(nonatomic,strong) IBOutlet UILabel *ratingLabel;
 @property(nonatomic,strong) IBOutlet UILabel *price;
 @property(nonatomic,strong) IBOutlet UIImageView *hotelImage;
-@property(nonatomic,strong) IBOutlet UIButton *btnConfirm;
+
+@property (weak, nonatomic) IBOutlet UIButton *btnConfirm;
+
+- (IBAction)onButton:(id)sender;
 
 @end

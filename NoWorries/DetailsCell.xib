@@ -21,14 +21,17 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="txc-xD-o1d">
-                        <rect key="frame" x="209" y="48" width="75" height="30"/>
+                        <rect key="frame" x="209" y="48" width="78" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                         <size key="titleShadowOffset" width="1" height="1"/>
-                        <state key="normal" title="Book Now">
-                            <color key="titleColor" red="0.96766728940217395" green="0.10225326935091134" blue="0.0" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                        <state key="normal" title="More Info">
+                            <color key="titleColor" red="0.20880950200000001" green="1" blue="0.025972591779999998" alpha="1" colorSpace="calibratedRGB"/>
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
+                        <connections>
+                            <action selector="onButton:" destination="BTx-Nj-fSP" eventType="touchUpInside" id="fZk-6x-huf"/>
+                        </connections>
                     </button>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$229" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zij-ZJ-WMg">
                         <rect key="frame" x="250" y="2" width="82" height="21"/>
@@ -81,7 +84,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="address1Label" destination="2xk-Ft-XEJ" id="epA-Ws-H3n"/>
-                <outlet property="btnConfirm" destination="txc-xD-o1d" id="Zd4-rc-kml"/>
+                <outlet property="btnConfirm" destination="txc-xD-o1d" id="d8e-us-3uu"/>
                 <outlet property="hotelImage" destination="ROD-ij-51W" id="21G-tX-BLR"/>
                 <outlet property="hotelNameLabel" destination="yDx-so-ss8" id="Dqk-Ck-afR"/>
                 <outlet property="price" destination="Zij-ZJ-WMg" id="47I-kM-HZ3"/>

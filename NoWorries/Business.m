@@ -19,9 +19,18 @@
         city = [data objectForKey:@"city"];
         state =[data objectForKey:@"stateProvinceCode"];
         zipcode= [data objectForKey:@"postalCode"];
-
-        hrate= [data objectForKey:@"highRate"];
-        lrate= [data objectForKey:@"lowRate"];
+        if ([data objectForKey:@"highRate"] == (NSString *)[NSNull null])
+        {
+            hrate=@"";
+        }
+        else
+            hrate= [data objectForKey:@"highRate"];
+        if ([data objectForKey:@"lowRate"] == (NSString *)[NSNull null])
+        {
+            lrate=@"";
+        }
+        else
+            lrate= [data objectForKey:@"lowRate"];
         proximityDistance= [data objectForKey:@"proximityDistance"];
         NSString *img = @"http://images.travelnow.com";
         thumbNailUrl= @"%@%@",img, [data objectForKey:@"thumbNailUrl"];

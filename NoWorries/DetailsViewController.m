@@ -10,6 +10,7 @@
 #import "DetailsCell.h"
 #import "ExpediaClient.h"
 #import "Business.h"
+#import "HotelDetailsViewController.h"
 
 @interface DetailsViewController ()
 
@@ -85,7 +86,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-     NSLog(@"Count:%@", self.hotelsResponse);
+    // NSLog(@"Count:%@", self.hotelsResponse);
     static NSString *CellIdentifier = @"DetailsCell";
     DetailsCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
 
@@ -105,71 +106,19 @@
     NSURL *url = [NSURL URLWithString:b.thumbNailUrl];
     NSData *data = [NSData dataWithContentsOfURL:url];
     cell.hotelImage.image = [UIImage imageWithData:data];
+    cell.btnConfirm.tag = indexPath.row;
+    [cell.btnConfirm addTarget:self action:@selector(onButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     return cell;
  
 }
-    /*int i=0;
-    for (NSDictionary *item in self.hotelsResponseArray)
-    {
-        NSLog(@"Count:%d", i);
-        NSLog(@"%@", [item valueForKey:@"name"]);
-        NSLog(@"%@", [item valueForKey:@"address1"]);
-        //NSLog(@"%@", [item valueForKey:@"address2"]);
-        NSLog(@"%@", [item valueForKey:@"city"]);
-        NSLog(@"%@", [item valueForKey:@"postalCode"]);
-        NSLog(@"%@", [item valueForKey:@"highRate"]);
-        NSLog(@"%@", [item valueForKey:@"proximityDistance"]);
-        NSLog(@"%@", [item valueForKey:@"thumbNailUrl"]);
-        NSLog(@"%@", [item valueForKey:@"hotelRating"]);
-        cell.hotelNameLabel.text =[item valueForKey:@"name"];
-        i=i+1;
-    }*/
-/*
-    if(indexPath.row==0)
-    {
-        cell.hotelNameLabel.text = @"Parc 55 Wyndham";
-        cell.address1Label.text = @"P55 Cyril Magnin St";
-        cell.price.text = @"$229.00";
-        //cell.hotelImage.image = "";
-        cell.ratingLabel.text = @"4.0";
-        cell.zipLabel.text = @"94102";
-    }
-    else if(indexPath.row==1)
-    {
-        cell.hotelNameLabel.text = @"Castle Inn";
-        cell.address1Label.text = @"1565 Broadway";
-        cell.ratingLabel.text = @"4.0";
-        //cell.hotelImage.image = "";
-        cell.price.text = @"$168.99";
-        cell.zipLabel.text = @"94109";
-    }
-    else if(indexPath.row==2)
-    {
-        cell.hotelNameLabel.text = @"Executive Hotel Vintage Court";
-        cell.address1Label.text = @"650 Bush Street";
-        cell.price.text = @"$229.00";
-        cell.ratingLabel.text = @"3.5";
-        //cell.hotelImage.image = "";
-        cell.zipLabel.text = @"94108";
-    }
-    else if(indexPath.row==3)
-    {
-        cell.hotelNameLabel.text = @"San Remo Hotel";
-        cell.address1Label.text = @"2237 Mason Street";
-        cell.price.text = @"$129.00";
-        cell.ratingLabel.text = @"4.0";
-        //cell.hotelImage.image = "";
-        cell.zipLabel.text = @"94133";
-    }
-    else if(indexPath.row==4)
-    {
-        cell.hotelNameLabel.text = @"Hilton San Francisco Downtown";
-        cell.address1Label.text = @"750 Kearny St";
-        cell.price.text = @"$389.00";
-        cell.ratingLabel.text = @"4.0";
-        //cell.hotelImage.image = "";
-        cell.zipLabel.text = @"94108";
-    }*/
+- (void) onButtonClicked:(id)sender {
+    NSLog(@"Settings Button Tapped");
+    
+    HotelDetailsViewController *hoteldetailsVC=[[HotelDetailsViewController alloc]initWithNibName:@"HotelDetailsViewController" bundle:nil];
+    [self.navigationController pushViewController:hoteldetailsVC animated:YES];
+    
+}
+
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
